@@ -3,14 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hola Mundo</title> 
+    <title>Hola JavaScript Simple</title>
+    <style>
+        /* Estilos CSS básicos */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        h1 {
+            color: #007bff;
+        }
+        .contenedor-botones {
+            margin-bottom: 30px;
+        }
+        button {
+            padding: 10px 15px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        #botonSaludo {
+            background-color: #28a745; /* Verde */
+            color: white;
+        }
+        #botonSaludo:hover {
+            background-color: #218838;
+        }
+        #botonCambiarTexto {
+            background-color: #ffc107; /* Amarillo */
+            color: #333;
+        }
+        #botonCambiarTexto:hover {
+            background-color: #e0a800;
+        }
+        .mensaje-js {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #007bff;
+            background-color: #e9f5ff;
+            border-radius: 5px;
+        }
+        table {
+            width: 80%;
+            margin-top: 30px;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 <body>
 
-    <h1>Hola JavaScript</h1>
-    <p>Mira la consola del navegador.</p>
+    <h1>👋 Hola JavaScript</h1>
 
-<script src="main.js"></script>
+    <div class="contenedor-botones">
+        <p>Haz clic en los botones para ver la interactividad de JavaScript:</p>
+        <button id="botonSaludo">Saludar (Alert)</button>
+        <button id="botonCambiarTexto">Cambiar Texto</button>
+    </div>
+
+    <div class="mensaje-js">
+        <p id="textoDinamico">Este texto cambiará cuando hagas clic en el botón "Cambiar Texto".</p>
+    </div>
+
+    <hr>
+
+    <h2>Tabla: Conceptos Clave de JavaScript</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Concepto</th>
+                <th>Descripción</th>
+                <th>Ejemplo Básico</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Variables (let/const)</td>
+                <td>Contenedores para almacenar datos. <code>const</code> es para valores que no cambian.</td>
+                <td><code>let edad = 30;</code></td>
+            </tr>
+            <tr>
+                <td>Funciones</td>
+                <td>Bloques de código diseñados para realizar una tarea particular.</td>
+                <td><code>function sumar(a, b) { return a + b; }</code></td>
+            </tr>
+            <tr>
+                <td>DOM</td>
+                <td>**Document Object Model**. La estructura de un documento HTML que JS puede modificar.</td>
+                <td><code>document.getElementById("id")</code></td>
+            </tr>
+            <tr>
+                <td>Eventos</td>
+                <td>Acciones que ocurren en el navegador (clics, carga de página, etc.) que JS puede detectar.</td>
+                <td><code>onclick="miFuncion()"</code></td>
+            </tr>
+            <tr>
+                <td>Tipos de Datos</td>
+                <td>Define el tipo de valor que tiene una variable (String, Number, Boolean, Object).</td>
+                <td><code>"Hola"</code> (String), <code>42</code> (Number)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        // 1. Obtener referencias a los elementos del DOM
+        const botonSaludo = document.getElementById('botonSaludo');
+        const botonCambiarTexto = document.getElementById('botonCambiarTexto');
+        const textoDinamico = document.getElementById('textoDinamico');
+
+        // 2. Definir las funciones para los eventos
+
+        // Función para el botón Saludar
+        function mostrarSaludo() {
+            // Usa la función 'alert' para mostrar un cuadro de diálogo
+            alert('¡Hola! Soy JavaScript, haciendo una alerta.');
+        }
+
+        // Función para el botón Cambiar Texto
+        function cambiarContenido() {
+            // Cambia la propiedad 'textContent' del elemento <p>
+            textoDinamico.textContent = '¡El texto ha sido cambiado por JavaScript! 🎉';
+            // También podemos cambiar el color un poco para resaltarlo
+            textoDinamico.style.color = '#dc3545'; // Rojo
+            textoDinamico.style.fontWeight = 'bold';
+        }
+
+        // 3. Asignar los "escuchadores de eventos" (Event Listeners) a los botones
+
+        // Cuando se haga clic en 'botonSaludo', se ejecuta 'mostrarSaludo'
+        botonSaludo.addEventListener('click', mostrarSaludo);
+
+        // Cuando se haga clic en 'botonCambiarTexto', se ejecuta 'cambiarContenido'
+        botonCambiarTexto.addEventListener('click', cambiarContenido);
+    </script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-612R49TYFT');
+</script>
 
 </body>
 </html>
